@@ -18,6 +18,11 @@ Route::get('/', function () {
 });
 
 //admin routes
-Route::namespace('Admin')->group(function(){
-    Route::get('/admin','AdminController@index');
+Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>'role:admin'],function(){
+    Route::get('/','AdminController@index')->name('admin-home');
+    Route::get('/episodes','EpisodesController@index');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
