@@ -30,7 +30,7 @@
                             <i class="nav-icon fa fa-video-camera"></i>
                             <p>
                                 ویدیوها
-                                <i class="right fa fa-angle-left"></i>
+                                <i class="fa fa-angle-left right"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview" style="display: block;">

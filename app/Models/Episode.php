@@ -23,4 +23,9 @@ class Episode extends Model
     {
         return $this->belongsTo(EpisodeCategory::class, 'category_id', 'id');
     }
+
+    public function type()
+    {
+        return $this->belongsTo(EpisodeType::class,'type_id','id');
+    }
 }

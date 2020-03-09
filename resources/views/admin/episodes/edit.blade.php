@@ -15,7 +15,7 @@
             <div class="card card-default">
                 <div class="card-body">
                     <div class="row flex-column">
-                        <form action="{{route('episodes.store')}}" method="post">
+                        <form action="{{route('episodes.update',$episode->id)}}" method="post">
                             @csrf
                             @method('PUT')
                             <div class="form-group">
@@ -23,10 +23,18 @@
                                 <input type="text" class="form-control" name="title" value="{{$episode->title}}">
                             </div>
                             <div class="form-group">
+                                <label>نوع</label>
+                                <select name="category_id" class="form-control">
+                                    @foreach($episode_types as $episode_type)
+                                        <option value="{{$episode_type->id}}" {{$episode->type_id == $episode_type->id ? 'selected' : ''}}>{{$episode_type->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label>دسته بندی</label>
                                 <select name="category_id" class="form-control">
                                     @foreach($episode_categories as $episode_category)
-                                        <option value="{{$episode_category->id}}">{{$episode_category->name}}</option>
+                                        <option value="{{$episode_category->id}}" {{$episode_category->id == $episode->category_id ? 'selected' : ''}}>{{$episode_category->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -50,10 +58,10 @@
                             </div>
                             <div class="form-group">
                                 <label>توضیحات</label>
-                                <textarea class="form-control" rows="3" name="description"
-                                          value="{{$episode->description}}"></textarea>
+                                <textarea class="form-control" rows="3"
+                                          name="description">{{$episode->description}}</textarea>
                             </div>
-                            <button class="btn btn-primary">ایجاد</button>
+                            <button class="btn btn-primary">ویرایش</button>
                         </form>
                     </div>
                 </div>

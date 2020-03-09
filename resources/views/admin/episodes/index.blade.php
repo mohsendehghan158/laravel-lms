@@ -36,6 +36,7 @@
                                 <tr>
                                     <th>شناسه</th>
                                     <th>عنوان</th>
+                                    <th>نوع</th>
                                     <th>دسته بندی</th>
                                     <th>زمان</th>
                                     <th>عملیات</th>
@@ -44,6 +45,7 @@
                                     <tr>
                                         <td>{{$episode->id}}</td>
                                         <td>{{$episode->title}}</td>
+                                        <td>{{$episode->type->name}}</td>
                                         <td>{{$episode->category->name}}</td>
                                         <td>{{$episode->time}}</td>
                                         <td class="flex flex-row">

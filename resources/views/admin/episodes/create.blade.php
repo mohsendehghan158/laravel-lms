@@ -22,6 +22,14 @@
                                 <input type="text" class="form-control" name="title">
                             </div>
                             <div class="form-group">
+                                <label>نوع</label>
+                                <select name="type" class="form-control">
+                                    @foreach($episode_types as $episode_type)
+                                        <option value="{{$episode_type->id}}">{{$episode_type->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label>دسته بندی</label>
                                 <select name="category_id" class="form-control">
                                     @foreach($episode_categories as $episode_category)
