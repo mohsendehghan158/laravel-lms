@@ -37,4 +37,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function episodes()
+    {
+        return $this->hasMany(Episode::class,'id','author_id');
+    }
 }

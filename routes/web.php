@@ -19,8 +19,10 @@ Route::get('/', function () {
 
 //admin routes
 Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>'role:admin'],function(){
-    Route::get('/','AdminController@index')->name('admin-home');
-    Route::get('/episodes','EpisodesController@index');
+    Route::get('/','AdminController@index')->name('admin-index');
+    Route::resource('episodes','EpisodeController');
+    Route::resource('episode-categories','EpisodeCategoryController');
+    Route::resource('users','UserController');
 });
 
 Auth::routes();
