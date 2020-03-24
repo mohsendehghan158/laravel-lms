@@ -11,10 +11,11 @@ class PermissionsSeeder extends Seeder
     public function run()
     {
         // create roles and assign existing permissions
-        $role1 = Role::create(['name' => 'admin']);
-
-        // create demo users
-        $user = User::find(1);
-        $user->assignRole($role1);
+//        $role1 = Role::create(['name' => 'admin']);
+//
+//        // create demo users
+//        $user = User::find(1);
+//        $user->assignRole($role1);
+//        Role::create(['name'=>'subscriber']);
     }
 }

@@ -12,17 +12,21 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//front routes
+Route::group(['namespace' => 'Front'], function () {
+    Route::get('/', 'IndexController@index')->name('index');
+    Route::get('/episode/{episode}', 'EpisodeController@show');
+    Route::get('/episodes', 'EpisodeController@all')->name('all-episodes');
 
-Route::get('/', function () {
-    return view('welcome');
 });
 
 //admin routes
-Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>'role:admin'],function(){
-    Route::get('/','AdminController@index')->name('admin-index');
-    Route::resource('episodes','EpisodeController');
-    Route::resource('episode-categories','EpisodeCategoryController');
-    Route::resource('users','UserController');
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'role:admin'], function () {
+    Route::get('/', 'AdminController@index')->name('admin-index');
+    Route::resource('episodes', 'EpisodeController');
+    Route::resource('episode-categories', 'EpisodeCategoryController');
+    Route::resource('users', 'UserController');
+    Route::resource('plans', 'PlanController');
 });
 
 Auth::routes();

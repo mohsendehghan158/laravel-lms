@@ -21,7 +21,6 @@
                             <i class="nav-icon fa fa-dashboard"></i>
                             <p>
                                 خانه
-                                <i class="right fa fa-angle-left"></i>
                             </p>
                         </a>
                     </li>
@@ -67,6 +66,29 @@
                                 <a href="{{route('episode-categories.create')}}" class="nav-link">
                                     <i class="fa fa-circle-o nav-icon"></i>
                                     <p>افزودن دسته جدید</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="{{route('plans.index')}}" class="nav-link">
+                            <i class="nav-icon fa fa-video-camera"></i>
+                            <p>
+                                پلن ها
+                                <i class="fa fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview" style="display: block;">
+                            <li class="nav-item">
+                                <a href="{{route('plans.index')}}" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>همه پلن ها</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('plans.create')}}" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>افزودن پلن جدید</p>
                                 </a>
                             </li>
                         </ul>
